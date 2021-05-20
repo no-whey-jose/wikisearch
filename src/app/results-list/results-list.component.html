@@ -1,1 +1,20 @@
-<p>results-list works!</p>
+<table class="table is-strpied">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Word Count</th>
+      <th>Snippet</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let wikiResult of wikiResults">
+      <td>
+        <a target="_blank" [href]="'https://en.wikipedia.org?curid=' +wikiResult.pageid ">
+          {{ wikiResult.title }}
+        </a>
+      </td>
+      <td>{{ wikiResult.wordcount }}</td>
+      <td [innerHtml]="wikiResult.snippet"></td>
+    </tr>
+  </tbody>
+</table>

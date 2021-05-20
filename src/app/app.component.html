@@ -1,2 +1,4 @@
-<app-search-bar (query)="onTerm($event)"></app-search-bar>
-<app-results-list [wikiResults]="wikiResults"></app-results-list>
+<div class="container">
+  <app-search-bar (query)="onTerm($event)"></app-search-bar>
+  <app-results-list *ngIf="wikiResults.length" [wikiResults]="wikiResults"></app-results-list>
+</div>
